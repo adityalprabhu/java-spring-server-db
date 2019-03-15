@@ -126,6 +126,14 @@ public class UserService {
 				session.getAttribute("currentUser");	
 		return currentUser;
 	}
+	
+	
+	@PostMapping("/api/user/{uid}/profile")
+	public User userProfile(@PathVariable("uid") Integer userId, HttpSession session) {
+		User currentUser = userRepository.findById(userId).get();
+		return currentUser;
+	}
+
 
 	@PutMapping("/api/profile")
 	public User updateProfile(@RequestBody User user, HttpSession session) {
