@@ -91,6 +91,16 @@ public class CourseService {
 		Course new_course = courseRepository.save(course); 
 		return new_course;
 	}
+	
+	@PostMapping("/api/user/{uid}/courses")
+	public Course createCourseForUser
+	(@PathVariable("uid") Integer userId, @RequestBody Course course, HttpSession session) {
+
+//		User currentUser = (User) session.getAttribute("currentUser");
+		course.setFaculty(userRepository.findById(userId).get());
+		Course new_course = courseRepository.save(course); 
+		return new_course;
+	}
 
 
 	@GetMapping("/api/courses")
@@ -102,6 +112,18 @@ public class CourseService {
 		}	
 
 		return userRepository.findById(currentUser.getId()).get().getAuthoredCourses();
+ 
+	}
+	
+	@GetMapping("/api/user/{uid}/courses")
+	public List<Course> findAllCoursesForUser(@PathVariable("uid") Integer userId, HttpSession session){
+//		User currentUser = (User) session.getAttribute("currentUser");
+//
+//		if(currentUser == null) {
+//			return null;
+//		}	
+
+		return userRepository.findById(userId).get().getAuthoredCourses();
 
 	}
 
