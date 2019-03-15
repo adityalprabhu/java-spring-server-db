@@ -1,0 +1,388 @@
+<html>
+<head>
+<title>Course Editor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="course-editor.style.client.css">
+<script defer
+	src="https://use.fontawesome.com/releases/v5.6.3/js/all.js"
+	integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1"
+	crossorigin="anonymous"></script>
+
+</head>
+
+<!--  All widgets have the name 'dynamic widget' -->
+<body>
+	<div class="container-fluid">
+		<h1 class="text-center">Course Editor</h1>
+		<div class="row container">
+			<div class="col-2 d-none d-md-block">
+				<ul class="nav flex-column nav-pills">
+					<li><a class="nav-link active" href="#">Module 1</a></li>
+					<li><a class="nav-link" href="#">Module 2</a></li>
+					<li><a class="nav-link" href="#">Module 3</a></li>
+					<li><a class="nav-link" href="#">Module 4</a></li>
+				</ul>
+			</div>
+			<div class="col-10 module-container flex-container col-md-10 col-12">
+				<ul class="nav nav-tabs">
+					<li class="nav-item "><a class="nav-link active" href="#">Lesson
+							1</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Lesson 2</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="#">Lesson 3</a>
+					</li>
+				</ul>
+				<br />
+				<ul class="nav nav-pills">
+					<li class="nav-item"><a class="nav-link active" href="#">Topic
+							1</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Topic 2</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="#">Topic 3</a>
+					</li>
+				</ul>
+				<div>
+					<div class="row widget-action-bar">
+						<div class="col-sm-8"></div>
+						<div class="col-sm-4 content">
+							<span><button class="btn btn-danger save-btn float-right">Save</button></span>
+							<span class="float-right">Preview</span> <span
+								class="float-right"> <label class="switch"> <input
+									type="checkbox"> <span class="slider round"></span>
+							</label>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="card" id="headingWidget" name="dynamicWidget">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-sm-7">
+								<h5 class="card-title">Heading Widget</h5>
+							</div>
+							<div class="row col-sm-5">
+								<div class="col-sm-2 text-center" style="padding: 1px;">
+									<button class="icon">
+										<i class="fas fa-arrow-up"></i>
+									</button>
+								</div>
+								<div class="col-sm-2 text-center" style="padding: 1px;">
+									<button class="icon">
+										<i class="fas fa-arrow-down"></i>
+									</button>
+								</div>
+								<div class="col-sm-6">
+									<select class="form-control" id="widgetType"
+										required="required" style="width: 100%;">
+										<option value="heading">Heading</option>
+										<option value="list">List</option>
+										<option value="paragraph">Paragraph</option>
+										<option value="image">Image</option>
+										<option value="link">Link</option>
+									</select>
+								</div>
+								<div class="col-sm-2 text-center" style="padding: 1px;">
+									<button class="icon-danger">
+										<i class="fas fa-times" style="color: white;"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div>
+							<div class="input-group flex-nowrap" style="margin-top: 2%;">
+								<label for="headingText" class="col-sm-3 col-form-label">
+									Heading Text</label> <input id="headingText" type="text"
+									class="form-control" placeholder="Heading text"
+									aria-label="Heading text" aria-describedby="addon-wrapping">
+							</div>
+							<div class="input-group flex-nowrap" style="margin-top: 2%;">
+								<label for="headingSize" class="col-sm-3 col-form-label">
+									Heading Size </label> <select class="form-control" id="headingSize"
+									required="required" style="width: 100%;">
+									<option value="heading1">Heading 1</option>
+									<option value="heading2">Heading 2</option>
+									<option value="heading3">Heading 3</option>
+									<option value="heading4">Heading 4</option>
+									<option value="heading5">Heading 5</option>
+									<option value="heading6">Heading 6</option>
+								</select>
+							</div>
+							<div class="input-group flex-nowrap" style="margin-top: 2%;">
+								<label for="widgetName" class="col-sm-3 col-form-label">
+									Widget Name </label> <input type="text" id="widgetName"
+									class="form-control" placeholder="Widget Name"
+									aria-label="Widget Name" aria-describedby="addon-wrapping">
+							</div>
+							<div class="flex-nowrap" style="margin-top: 2%;">
+								<h5>Preview</h5>
+								<h1>Heading text</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="card" id="listWidget" name="dynamicWidget">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-sm-7">
+								<h5 class="card-title">List Widget</h5>
+							</div>
+							<div class="row col-sm-5">
+								<div class="col-sm-2 text-center" style="padding: 1px;">
+									<button class="icon">
+										<i class="fas fa-arrow-up"></i>
+									</button>
+								</div>
+								<div class="col-sm-2 text-center" style="padding: 1px;">
+									<button class="icon">
+										<i class="fas fa-arrow-down"></i>
+									</button>
+								</div>
+								<div class="col-sm-6">
+									<select class="form-control" id="widgetType"
+										required="required" style="width: 100%;">
+										<option value="heading">Heading</option>
+										<option value="list" selected="selected">List</option>
+										<option value="paragraph">Paragraph</option>
+										<option value="image">Image</option>
+										<option value="link">Link</option>
+									</select>
+								</div>
+								<div class="col-sm-2 text-center" style="padding: 1px;">
+									<button class="icon-danger">
+										<i class="fas fa-times" style="color: white;"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div>
+							<div class="input-group flex-nowrap" style="margin-top: 2%;">
+							<label for="listItems" class="col-sm-3 col-form-label">
+									List Items`</label> 
+								<textarea id="listItems" class="form-control"
+									placeholder="Put each item in a separate row"
+									aria-label="List text">Put each item in a separate row</textarea>
+							</div>
+							<div class="input-group flex-nowrap" style="margin-top: 2%;">
+							<label for="listType" class="col-sm-3 col-form-label">
+									List Type</label>
+								<select class="form-control" id="listType" required="required"
+									style="width: 100%;">
+									<option value="ul">Unordered List</option>
+									<option value="ol">Ordered List</option>
+								</select>
+							</div>
+							<div class="input-group flex-nowrap" style="margin-top: 2%;">
+								<label for="widgetName" class="col-sm-3 col-form-label">
+									Widget Name </label> <input type="text" id="widgetName"
+									class="form-control" placeholder="Widget Name"
+									aria-label="Widget Name" aria-describedby="addon-wrapping">
+							</div>
+							<div class="flex-nowrap" style="margin-top: 2%;">
+								<h5>Preview</h5>
+								<ul>
+									<li>Put each</li>
+									<li>item in</li>
+									<li>a separate row</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="card" id="paragraphWidget" name="dynamicWidget">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-sm-7">
+								<h5 class="card-title">Paragraph Widget</h5>
+							</div>
+							<div class="row col-sm-5">
+								<div class="col-sm-2 text-center" style="padding: 1px;">
+									<button class="icon">
+										<i class="fas fa-arrow-up"></i>
+									</button>
+								</div>
+								<div class="col-sm-2 text-center" style="padding: 1px;">
+									<button class="icon">
+										<i class="fas fa-arrow-down"></i>
+									</button>
+								</div>
+								<div class="col-sm-6">
+									<select class="form-control" id="widgetType"
+										required="required" style="width: 100%;">
+										<option value="heading">Heading</option>
+										<option value="list">List</option>
+										<option value="paragraph" selected="selected">Paragraph</option>
+										<option value="image">Image</option>
+										<option value="link">Link</option>
+									</select>
+								</div>
+								<div class="col-sm-2 text-center" style="padding: 1px;">
+									<button class="icon-danger">
+										<i class="fas fa-times" style="color: white;"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div>
+							<div class="input-group flex-nowrap" style="margin-top: 2%;">
+							<label for="paragraphText" class="col-sm-3 col-form-label">
+									Paragraph Text</label>
+								<textarea id="paragraphText" class="form-control" placeholder="Lorem Ipsum"
+									aria-label="Paragraph text"></textarea>
+							</div>
+
+							<div class="input-group flex-nowrap" style="margin-top: 2%;">
+								<label for="widgetName" class="col-sm-3 col-form-label">
+									Widget Name </label> <input type="text" id="widgetName"
+									class="form-control" placeholder="Widget Name"
+									aria-label="Widget Name" aria-describedby="addon-wrapping">
+							</div>
+							<div class="flex-nowrap" style="margin-top: 2%;">
+								<h5>Preview</h5>
+								<p>Lorem Ipsum</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="card" id="imageWidget" name="dynamicWidget">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-sm-7">
+								<h5 class="card-title">Image Widget</h5>
+							</div>
+							<div class="row col-sm-5">
+								<div class="col-sm-2 text-center" style="padding: 1px;">
+									<button class="icon">
+										<i class="fas fa-arrow-up"></i>
+									</button>
+								</div>
+								<div class="col-sm-2 text-center" style="padding: 1px;">
+									<button class="icon">
+										<i class="fas fa-arrow-down"></i>
+									</button>
+								</div>
+								<div class="col-sm-6">
+									<select class="form-control" id="widgetType"
+										required="required" style="width: 100%;">
+										<option value="heading">Heading</option>
+										<option value="list">List</option>
+										<option value="paragraph">Paragraph</option>
+										<option value="image" selected="selected">Image</option>
+										<option value="link">Link</option>
+									</select>
+								</div>
+								<div class="col-sm-2 text-center" style="padding: 1px;">
+									<button class="icon-danger">
+										<i class="fas fa-times" style="color: white;"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div>
+							<div class="input-group flex-nowrap" style="margin-top: 2%;">
+							<label for="imageURL" class="col-sm-3 col-form-label">
+									Image URL</label>
+								<input class="form-control" id="imageURL"
+									placeholder="http://lorempixel.com/300/150/"
+									value="http://lorempixel.com/300/150/" aria-label="Image URL">
+							</div>
+
+							<div class="input-group flex-nowrap" style="margin-top: 2%;">
+								<label for="widgetName" class="col-sm-3 col-form-label">
+									Widget Name </label> <input type="text" class="form-control"
+									id="widgetName" placeholder="Widget Name"
+									aria-label="Widget Name" aria-describedby="addon-wrapping">
+							</div>
+							<div class="flex-nowrap" style="margin-top: 2%;">
+								<h5>Preview</h5>
+								<img src="http://lorempixel.com/300/150/" />
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="card" id="linkWidget" name="dynamicWidget">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-sm-7">
+								<h5 class="card-title">Link Widget</h5>
+							</div>
+							<div class="row col-sm-5">
+								<div class="col-sm-2 text-center" style="padding: 1px;">
+									<button class="icon">
+										<i class="fas fa-arrow-up"></i>
+									</button>
+								</div>
+								<div class="col-sm-2 text-center" style="padding: 1px;">
+									<button class="icon">
+										<i class="fas fa-arrow-down"></i>
+									</button>
+								</div>
+								<div class="col-sm-6">
+									<select class="form-control" id="widgetType"
+										required="required" style="width: 100%;">
+										<option value="heading">Heading</option>
+										<option value="list">List</option>
+										<option value="paragraph">Paragraph</option>
+										<option value="image">Image</option>
+										<option value="link" selected="selected">Link</option>
+									</select>
+								</div>
+								<div class="col-sm-2 text-center" style="padding: 1px;">
+									<button class="icon-danger">
+										<i class="fas fa-times" style="color: white;"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div>
+							<div class="input-group flex-nowrap" style="margin-top: 2%;">
+							<label for="linkURL" class="col-sm-3 col-form-label">
+									Link URL</label>
+								<input class="form-control" id="linkURL"
+									placeholder="Enter link URL here/"
+									value="https://www.youtube.com/user/jannunzi"
+									aria-label="Link URL">
+							</div>
+
+							<div class="input-group flex-nowrap" style="margin-top: 2%;">
+							<label for="linkText" class="col-sm-3 col-form-label">
+									Link Text</label>
+								<input type="text" class="form-control" id="linkText"
+									placeholder="Link Text" aria-label="Link text"
+									aria-describedby="addon-wrapping">
+							</div>
+
+							<div class="input-group flex-nowrap" style="margin-top: 2%;">
+							<label for="linkDesc" class="col-sm-3 col-form-label">
+									Link Description</label>
+								<input type="text" class="form-control" id="linkDesc"
+									placeholder="Link Description" aria-label="Link description"
+									aria-describedby="addon-wrapping"
+									value="This is a link to a youtube channel">
+							</div>
+
+							<div class="input-group flex-nowrap" style="margin-top: 2%;">
+								<label for="widgetName" class="col-sm-3 col-form-label">
+									Widget Name </label> <input type="text" class="form-control"
+									placeholder="Widget Name" aria-label="Widget Name"
+									aria-describedby="addon-wrapping">
+							</div>
+							<div class="flex-nowrap" style="margin-top: 2%;">
+								<h5>Preview</h5>
+								<a href="https://www.youtube.com/user/jannunzi">Link Text</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

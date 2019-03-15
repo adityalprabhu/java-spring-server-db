@@ -1,0 +1,46 @@
+
+
+.table-row{
+	border-bottom: 1px solid #d3d3d3;
+	margin-top: 1%;
+	padding-bottom: 1%;
+	
+}
+
+.container-fluid{
+	padding-top: 2%;
+}
+
+h1{
+	text-align:center;
+}
+
+form{
+	margin-top: 3%;
+}
+
+.listTable{
+	margin-top: 2%;
+}
+
+.table-heading{
+	font-weight: bold;
+	border-bottom:2px solid #d3d3d3 !important;
+	border-top:2px solid #d3d3d3 !important;
+	padding-bottom: 1%;
+	padding-top: 1%;
+	background-color: #dcdcdc;
+
+}
+
+.btn-circle{
+	padding: .700rem !important;
+    text-align: center;
+    border-radius: 25px;
+    width: 40px;
+    margin-left: 10px;
+}
+
+.listTable > div {
+	padding-left: 2%;
+}

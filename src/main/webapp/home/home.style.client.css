@@ -1,0 +1,21 @@
+.container{
+	padding-top: 5%;
+}
+
+h1{
+	text-align:center;
+}
+
+ul{
+	margin-top: 3%;
+}
+
+li{
+	margin-right: 10px;
+}
+
+li:hover{
+	background-color: #71CFCF;
+	color: black !important;
+	border-radius: 10px;
+}
